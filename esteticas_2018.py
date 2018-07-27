@@ -10,7 +10,7 @@ import geocoder
 import time
 
 #con pandas se lee el csv
-data = pd.read_excel("estetica_2018_refine.xlsx")
+data = pd.read_excel("centros_estética_2014_faltan.xlsx")
 #se agregan las columnas de latitud y longitud al dataframe
 #data.columns = ['direccion']
 #data = data.assign(latitud=None, longitud=None)
@@ -24,9 +24,9 @@ for index, row in data.iterrows():
     #para cada resultado en g (puede haber más de uno - cambiar luego)
     print(index, g.latlng)
     #se escribe en la celda concreta con df.at
-    data.at[index,'Latitud'] = g.lat
-    data.at[index,'Longitud'] = g.lng
+    data.at[index,'latitud'] = g.lat
+    data.at[index,'longitud'] = g.lng
         
 
 #guardar en un csv/xls
-data.to_excel("addresses_geocoded.xlsx",index = False)        
+data.to_excel("estetica_2014_faltan.xlsx",index = False)        
